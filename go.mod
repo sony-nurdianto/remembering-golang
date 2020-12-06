@@ -1,4 +1,4 @@
-module github.com/sony-nurdianto/remembering-golang.git
+module github.com/sony-nurdianto/remembering-golang
 
 go 1.14
 

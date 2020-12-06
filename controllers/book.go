@@ -9,10 +9,10 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/sony-nurdianto/remembering-golang.git/utils"
+	"github.com/sony-nurdianto/remembering-golang/utils"
 
-	"github.com/sony-nurdianto/remembering-golang.git/models"
-	"github.com/sony-nurdianto/remembering-golang.git/repository/bookrepository"
+	"github.com/sony-nurdianto/remembering-golang/models"
+	"github.com/sony-nurdianto/remembering-golang/repository/bookrepository"
 )
 
 //Controller struct

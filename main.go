@@ -8,11 +8,11 @@ import (
 
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
-	"github.com/sony-nurdianto/remembering-golang.git/controllers"
+	"github.com/sony-nurdianto/remembering-golang/controllers"
 	"github.com/subosito/gotenv"
 
-	"github.com/sony-nurdianto/remembering-golang.git/driver"
-	"github.com/sony-nurdianto/remembering-golang.git/models"
+	"github.com/sony-nurdianto/remembering-golang/driver"
+	"github.com/sony-nurdianto/remembering-golang/models"
 )
 
 var book []models.Book

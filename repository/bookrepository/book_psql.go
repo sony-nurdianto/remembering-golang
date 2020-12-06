@@ -3,7 +3,7 @@ package bookrepository
 import (
 	"database/sql"
 
-	"github.com/sony-nurdianto/remembering-golang.git/models"
+	"github.com/sony-nurdianto/remembering-golang/models"
 )
 
 //BookRepository struct

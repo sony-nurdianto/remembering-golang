@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/sony-nurdianto/remembering-golang.git/models"
+	"github.com/sony-nurdianto/remembering-golang/models"
 )
 
 //SendError status message
