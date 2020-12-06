@@ -1,1 +1,1 @@
-bin/go-getting-started
+go run main.go
