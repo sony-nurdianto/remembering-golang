@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"fmt"
+	"io"
 	"log"
 	"net/http"
 
@@ -22,6 +23,10 @@ func init() {
 	gotenv.Load()
 }
 
+func index(w http.ResponseWriter, r *http.Request) {
+	io.WriteString(w, "Hallo")
+}
+
 func main() {
 
 	db = driver.ConnectDB()
@@ -29,7 +34,8 @@ func main() {
 
 	r := mux.NewRouter()
 
-	r.HandleFunc("/", control.GetBooks(db)).Methods("GET")
+	r.HandleFunc("/", index)
+	r.HandleFunc("/book", control.GetBooks(db)).Methods("GET")
 	r.HandleFunc("/books/{id}", control.GetBook(db)).Methods("GET")
 	r.HandleFunc("/addBook", control.AddBook(db)).Methods("POST")
 	r.HandleFunc("/updateBook", control.UpdateBook(db)).Methods("PUT")
