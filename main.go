@@ -6,6 +6,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
@@ -31,6 +32,7 @@ func main() {
 
 	db = driver.ConnectDB()
 	control := controllers.Controller{}
+	port := os.Getenv("PORT")
 
 	r := mux.NewRouter()
 
@@ -41,7 +43,7 @@ func main() {
 	r.HandleFunc("/updateBook", control.UpdateBook(db)).Methods("PUT")
 	r.HandleFunc("/removeBook/{id}", control.RemoveBook(db)).Methods("DELETE")
 
-	fmt.Println("Server is running at port 8000")
-	log.Fatal(http.ListenAndServe(":8000", handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}), handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"}),
+	fmt.Println("Server is running")
+	log.Fatal(http.ListenAndServe(":"+port, handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}), handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"}),
 		handlers.AllowedOrigins([]string{"*"}))(r)))
 }

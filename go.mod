@@ -1,6 +1,6 @@
 module github.com/sony-nurdianto/remembering-golang
 
-go 1.11
+go 1.14
 
 require (
 	github.com/eaigner/jet v0.0.0-20140105131908-ae59b2cccfe3 // indirect
