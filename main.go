@@ -29,7 +29,7 @@ func main() {
 
 	r := mux.NewRouter()
 
-	r.HandleFunc("/books", control.GetBooks(db)).Methods("GET")
+	r.HandleFunc("/", control.GetBooks(db)).Methods("GET")
 	r.HandleFunc("/books/{id}", control.GetBook(db)).Methods("GET")
 	r.HandleFunc("/addBook", control.AddBook(db)).Methods("POST")
 	r.HandleFunc("/updateBook", control.UpdateBook(db)).Methods("PUT")
